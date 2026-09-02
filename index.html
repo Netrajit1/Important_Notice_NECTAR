@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>NECTAR Important Notice</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        background: #ffffff;
+        font-family: Calibri, Arial, sans-serif;
+    }
+
+    .notice-bar {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        overflow: hidden;
+    }
+
+    /* STATIC LEFT SECTION */
+    .notice-title {
+        flex: 0 0 auto;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+
+        padding-left: 18px;
+        padding-right: 20px;
+
+        background: #ffffff;
+
+        color: #FF2400;
+        font-family: Calibri, Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+
+        position: relative;
+        z-index: 10;
+    }
+
+    /* SCROLLING RIGHT SECTION */
+    .notice-scroll-area {
+        flex: 1;
+        height: 50px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .notice-track {
+        display: inline-flex;
+        align-items: center;
+        width: max-content;
+
+        animation: noticeScroll 28s linear infinite;
+        white-space: nowrap;
+    }
+
+    .notice-text {
+        color: #000000;
+        font-family: Calibri, Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 50px;
+        white-space: nowrap;
+    }
+
+    .notice-separator {
+        display: inline-block;
+        padding: 0 45px;
+        color: #000000;
+        font-size: 22px;
+    }
+
+    /*
+       Continuous scrolling animation
+    */
+    @keyframes noticeScroll {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Keep animation smooth */
+    .notice-track {
+        will-change: transform;
+    }
+
+    /* Smaller screens */
+    @media (max-width: 900px) {
+
+        .notice-title {
+            font-size: 20px;
+            padding-left: 12px;
+            padding-right: 15px;
+        }
+
+        .notice-text {
+            font-size: 18px;
+        }
+
+        .notice-separator {
+            font-size: 18px;
+            padding: 0 30px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="notice-bar">
+
+    <!-- STATIC TEXT -->
+    <div class="notice-title">
+        Important Notice:
+    </div>
+
+    <!-- SCROLLING TEXT -->
+    <div class="notice-scroll-area">
+
+        <div class="notice-track">
+
+            <span class="notice-text">
+                Registration is now open for upcoming GIS &amp; Remote Sensing training programmes
+            </span>
+
+            <span class="notice-separator">|</span>
+
+            <span class="notice-text">
+                Applications are invited for upcoming NECTAR capacity-building programmes
+            </span>
+
+            <span class="notice-separator">|</span>
+
+            <span class="notice-text">
+                Visit the Academic section for upcoming INTERNSHIP courses, schedules and registration details.
+            </span>
+
+            <!-- DUPLICATE FOR CONTINUOUS LOOP -->
+
+            <span class="notice-separator">|</span>
+
+            <span class="notice-text">
+                Registration is now open for upcoming GIS &amp; Remote Sensing training programmes
+            </span>
+
+            <span class="notice-separator">|</span>
+
+            <span class="notice-text">
+                Applications are invited for upcoming NECTAR capacity-building programmes
+            </span>
+
+            <span class="notice-separator">|</span>
+
+            <span class="notice-text">
+                Visit the Academic section for upcoming INTERNSHIP courses, schedules and registration details.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
