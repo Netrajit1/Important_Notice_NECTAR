@@ -7,141 +7,224 @@
 <title>NECTAR Important Notice</title>
 
 <style>
-    * {
-        box-sizing: border-box;
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background: #000e21;
+    font-family: Calibri, Arial, sans-serif;
+}
+
+/* MAIN NOTICE BAR */
+.notice-bar {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    background: #000e21;
+    overflow: hidden;
+}
+
+/* =========================================
+   STATIC IMPORTANT NOTICE
+========================================= */
+
+.notice-title {
+    flex: 0 0 auto;
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 18px;
+    padding-right: 22px;
+
+    background: #000e21;
+
+    color: #FF2400;
+
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+
+    line-height: 50px;
+
+    white-space: nowrap;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================
+   SCROLLING AREA
+========================================= */
+
+.notice-scroll-area {
+
+    flex: 1;
+
+    height: 50px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background: #000e21;
+}
+
+
+/* =========================================
+   SCROLLING TRACK
+========================================= */
+
+.notice-track {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: max-content;
+
+    white-space: nowrap;
+
+    /*
+       VERY SLOW SCROLL
+       Increase 55s for even slower
+    */
+    animation: noticeScroll 55s linear infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================
+   NOTICE TEXT
+========================================= */
+
+.notice-text {
+
+    color: #ffffff;
+
+    font-family: Calibri, Arial, sans-serif;
+
+    font-size: 19px;
+
+    font-weight: normal;
+
+    line-height: 50px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   SEPARATOR
+========================================= */
+
+.notice-separator {
+
+    display: inline-block;
+
+    padding-left: 35px;
+    padding-right: 35px;
+
+    color: #ffffff;
+
+    font-family: Calibri, Arial, sans-serif;
+
+    font-size: 19px;
+
+    line-height: 50px;
+}
+
+
+/* =========================================
+   CONTINUOUS SCROLL
+========================================= */
+
+@keyframes noticeScroll {
+
+    0% {
+        transform: translateX(0);
     }
 
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 50px;
-        overflow: hidden;
-        background: #ffffff;
-        font-family: Calibri, Arial, sans-serif;
+    100% {
+        transform: translateX(-50%);
     }
 
-    .notice-bar {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        background: #ffffff;
-        overflow: hidden;
-    }
+}
 
-    /* STATIC LEFT SECTION */
+
+/* =========================================
+   MOBILE / SMALL SCREEN
+========================================= */
+
+@media (max-width: 900px) {
+
     .notice-title {
-        flex: 0 0 auto;
-        height: 50px;
 
-        display: flex;
-        align-items: center;
+        font-size: 18px;
 
-        padding-left: 18px;
-        padding-right: 20px;
-
-        background: #ffffff;
-
-        color: #FF2400;
-        font-family: Calibri, Arial, sans-serif;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 1;
-        white-space: nowrap;
-
-        position: relative;
-        z-index: 10;
-    }
-
-    /* SCROLLING RIGHT SECTION */
-    .notice-scroll-area {
-        flex: 1;
-        height: 50px;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    .notice-track {
-        display: inline-flex;
-        align-items: center;
-        width: max-content;
-
-        animation: noticeScroll 28s linear infinite;
-        white-space: nowrap;
+        padding-left: 12px;
+        padding-right: 15px;
     }
 
     .notice-text {
-        color: #000000;
-        font-family: Calibri, Arial, sans-serif;
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 50px;
-        white-space: nowrap;
+
+        font-size: 17px;
     }
 
     .notice-separator {
-        display: inline-block;
-        padding: 0 45px;
-        color: #000000;
-        font-size: 22px;
+
+        font-size: 17px;
+
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
-    /*
-       Continuous scrolling animation
-    */
-    @keyframes noticeScroll {
-        0% {
-            transform: translateX(100%);
-        }
+}
 
-        100% {
-            transform: translateX(-100%);
-        }
-    }
-
-    /* Keep animation smooth */
-    .notice-track {
-        will-change: transform;
-    }
-
-    /* Smaller screens */
-    @media (max-width: 900px) {
-
-        .notice-title {
-            font-size: 20px;
-            padding-left: 12px;
-            padding-right: 15px;
-        }
-
-        .notice-text {
-            font-size: 18px;
-        }
-
-        .notice-separator {
-            font-size: 18px;
-            padding: 0 30px;
-        }
-    }
 </style>
 </head>
+
 
 <body>
 
 <div class="notice-bar">
 
-    <!-- STATIC TEXT -->
+    <!-- =====================================
+         STATIC LEFT TEXT
+    ====================================== -->
+
     <div class="notice-title">
         Important Notice:
     </div>
 
-    <!-- SCROLLING TEXT -->
+
+    <!-- =====================================
+         SCROLLING NOTICE AREA
+    ====================================== -->
+
     <div class="notice-scroll-area">
 
         <div class="notice-track">
+
+            <!-- FIRST SET -->
 
             <span class="notice-text">
                 Registration is now open for upcoming GIS &amp; Remote Sensing training programmes
@@ -159,7 +242,9 @@
                 Visit the Academic section for upcoming INTERNSHIP courses, schedules and registration details.
             </span>
 
-            <!-- DUPLICATE FOR CONTINUOUS LOOP -->
+
+            <!-- SECOND SET
+                 Required for seamless looping -->
 
             <span class="notice-separator">|</span>
 
